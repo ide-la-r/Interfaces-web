@@ -150,6 +150,18 @@ html{
     box-shadow: 5px 5px 10px gray inset;
 }
 
+.content__box--3d{
+    box-shadow: 14px 14px 20px 0 grey;
+}
+
+.content__box--shadowsMultiple{
+    box-shadow: -1px -1px 6px 0 rgb(122, 221, 102), 4px 4px 16px 2px rgb(92, 162, 235);
+}
+.content__box--shadowsMultiple2{
+    box-shadow: 2px 2px 8px 0 rgb(209, 102, 221), 4px 4px 16px 0 #d66, 0px 0px 24px 2px rgb(221, 197, 102);
+}
+
+
 /* cajas libres y cajas fijas*/
 
 .box__free{
@@ -256,3 +268,25 @@ html{
         transform: rotate(0deg);
     }
 }
+
+/* Position absolute */
+.box__container2{
+    position: relative;
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+}
+
+.box__free--3{
+    /* position: relative; */
+    background-color: blue;
+    top: 0px;
+    left: 0px;
+}
+
+.box__free--4{
+    background-color: yellow;
+    top: 0px;
+    left: 200px;
+}
+
