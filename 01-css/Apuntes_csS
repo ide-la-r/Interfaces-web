@@ -1,0 +1,8 @@
+Si yo le quiero cambiar el color a solo uno de todo un grupo llamado btn 
+seria 
+.btn{
+
+}
+.btn--active{
+    este cambiaria el que tenga esta etiqueta pero teniendo en comun la anterior
+}
