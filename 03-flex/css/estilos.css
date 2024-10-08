@@ -1,0 +1,88 @@
+/* reseteo estilos */
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.container{
+    /* float: left; */
+    border: 1px solid black;
+
+}
+
+.container__layout{
+    /* float: left; */
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow:row wrap;/*Esto y el display flex eslo mismo*/
+    justify-content: space-around;
+    width: auto;
+    height: 700px;
+    align-items: center; /*Esto te quita la medida en la caja del heigth pero no el tamaño que ocupa */
+    border: 2px solid gray;
+}
+
+.layout__box{
+    /* float: left; */
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid gray;
+    margin: 10px;
+
+    flex-grow: 1;/*Todas las cajas ocupan el espacio definido que tienen*/;
+    min-width: 20%;
+}
+
+/* Esto lo que hace es resetear el flotado */
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.layout__box--red{
+    order: 2;
+    background-color: red;
+    color: white;
+    flex-grow: 2;
+    flex-basis: calc((70% / 3) + 20px);
+}
+
+.layout__box--yellow{
+    order: 4;
+    background-color: yellow;
+    color: white;
+    flex-grow: 1;
+}
+
+.layout__box--green{
+    order: 5;/*ordena como lo has puesto en el html*/
+    background-color: green;
+    color: white;
+    flex-grow: 1;
+}
+
+.layout__box--orange{
+    order: 3;
+    background-color: orange;
+    color: white;
+    flex-grow: 5;
+    align-self: flex-end;
+}
+
+.layout__box--pink{
+    order: 6;
+    background-color: pink;
+    color: white;
+    flex-grow: 10;
+}
+
+.layout__box--blue{
+    background-color: blue;
+    color: white;
+    flex-grow: 1;
+    align-self: flex-start;
+}
