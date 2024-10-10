@@ -16,14 +16,17 @@
 .container__header{
     /* Añadir aquí Flex y Align y/o justify */
 
-
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center;  */
     height: 120px;
     border-bottom: 1px solid rgba(226,225,226, 0.8);    
 }
 
 .container__logo{
     /* Añadir aquí Flex */
-    
+    display: flex;
+    align-items: center;
     padding: 10px;
     margin-left: 20px;
     color: black;
@@ -41,14 +44,14 @@
 
 .header__menu{
     /* Añadir aquí Flex */
-
-
+    margin-right: 10px;
     height: 100%;
 }
 .menu__list{
     /* Añadir aquí Flex y Align y/o justify */
-
-
+    display: flex;
+    align-items: center;
+    /* justify-content: right; */
     height: 100%;
     list-style: none;
 }
@@ -71,23 +74,27 @@
 /* contenido */
 .content{
     /* Añadir aquí Flex y Align y/o justify */
-
-
+    display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 .content__projects{
     /* Añadir aquí Flex y Align y/o justify */
-
-
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 85%;
+    justify-items: center;
 }
 .projects__project{
-    /* Añadir aquí Flex */
-
-
+    /*AñadiraquíFlex*/flex-basis: 23.5%;
+    border-radius: 5px;
     margin-bottom: 25px;
     margin-right: 20px;
     border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 .projects__project img{
     width: 100%;
@@ -119,8 +126,9 @@
 /* barra lateral */
 .content__lateral{
     /* Añadir aquí Flex */
-
-
+    /* display: flex; */
+    flex-wrap: wrap;
+    flex-basis: 15%;
     margin-right: 30px;
     padding: 15px;
 }
@@ -136,6 +144,7 @@
     text-align: center;
 }
 .lateral__list{
+    flex-basis: 100%;
     list-style: none;
 }
 .lateral__list li{
@@ -166,15 +175,17 @@
 /* Footer */
 .content__footer{
     /* Añadir aquí Flex y Align y/o justify */
-
-
+    display: flex;
+    justify-content: space-between;
     height: 120px;
     border-top: 1px solid rgba(226,225,226, 0.8);
 }
 .footer__logoFooter{
     /* Añadir aquí Flex y order */
-
-
+    display: flex;
+    align-items: center;
+    order: 2;
+    justify-content: right;
     padding: 10px;
     margin-left: 20px;
     font-family: Helvetica, Arial,  sans-serif;
@@ -191,7 +202,8 @@
 
 .footer__info{
     /* Añadir aquí Flex y Order */
-
+    display: flex;
+    align-items: center;
     opacity: 0.7;
     margin-left: 20px;
 }
