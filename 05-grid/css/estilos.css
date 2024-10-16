@@ -19,7 +19,12 @@ body{
 }
 
 .container__layout{
-
+    display: grid;
+    /*grid-template-columns: 2fr 1f1 1fr; /*Esto es lo ma facil y lo mejor, te redimensiona solo a lo que quepa en la pantalla*/
+    /*grid-template-columns: repeat(4,1fr); te monta 4 columnas de 1 fr*/
+    /* grid-template-columns: calc(25% - 10px) calc(25% - 10px) calc(25% - 10px) calc(20% - 10px); */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .layout__box{
@@ -32,6 +37,10 @@ body{
 .layout__box--red{
     background-color: red;
     color: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 
 .layout__box--yellow{
@@ -57,6 +66,8 @@ body{
 .layout__box--blue{
     background-color: blue;
     color: white;
+    grid-column-start: 1;
+    grid-column-end: 5;
 }
 
 .layout__box--cyan{
@@ -68,10 +79,16 @@ body{
     background-color: salmon;
     color: white;
 }
-
+/* El order se puede poner para ordenar*/
 .layout__box--black{
     background-color: black;
     color: white;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    /* grid-column: 1 / 5; */
+    grid-row-start: 4;
+    grid-row-end: 5;
+    /* grid-row: 4 / 5; Es lo mismo que lo de arriba pero mas corto*/
 }
 
 .layout__box--yellowgreen{
