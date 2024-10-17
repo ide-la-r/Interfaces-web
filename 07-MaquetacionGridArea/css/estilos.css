@@ -4,7 +4,7 @@
     padding: 0px;
 }
 body{
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
 /*  Maquetacion
@@ -21,4 +21,73 @@ body{
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 120px 70px 2fr 70px;
+    
+    grid-template-areas: 
+        "cabecera cabecera"/*120px - Esto es la cabecera*/
+        "menu menu"/* 70px -Esto es el menu*/
+        "contenido lateral"
+        "footer footer";
+
+    width: 98%;
+    height: 100vh;/*para que coja el 100% de la altura del ordenador*/
+    margin: 0 auto;
+    border: 1px solid grey;
+}
+
+.website__header{
+    grid-area: cabecera;
+    align-content: center;
+    background-color: salmon;
+    color: white;
+}
+
+.website__menu{
+    grid-area: menu;
+    background-color: indianred;
+    color: white;
+    line-height: 70px;
+}
+
+.menu__list{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    list-style: none;/*Esto quita los puntos de las lineas*/
+}
+
+.list__item a{
+    color: white;
+    text-decoration: none;
+    transition: transform 4s ease, background-color 1s ease;
+}
+
+.list__item:hover{
+    transform: scale(1.1);
+    background-color: lightcoral;
+}
+
+.website__content{
+    grid-area: contenido;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 20px;
+    grid-gap: 10px;
+}
+
+.content__article{
+    background-color: lightcoral;
+    border: 2px solid darkred;
+    color: white;
+}
+
+.website__sidebar{
+    grid-area: lateral;
+    background-color: salmon;
+    color: white;
+}
+
+.website__footer{
+    grid-area: footer;
+    background-color: lightgrey;
+    color: black;
+    
 }
