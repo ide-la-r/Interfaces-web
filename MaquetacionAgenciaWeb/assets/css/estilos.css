@@ -549,20 +549,20 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .service-shapes--shape1{
     /* position */
-    bottom: 0;
-    left: 0;
+    top: 0%;
+    right: 21%;
     animation-duration: 2s;
 }
 .service-shapes--shape2{
     /* position */
     opacity: 0.6;
-    top: 0;
-    right: 268px;
+    top: 8%;
+    right: 27.9%;
 }
 .service-shapes--shape3{
     /* position y animación */
-    top: 180px;
-    right: 300px;
+    top: 40%;
+    right: 30%;
     animation: mueveBolaRosita 10s infinite;
 }
 @keyframes mueveBolaRosita {
@@ -574,7 +574,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 /* Estilos para la sección de Proyectos */
 .layout__projects{
     /* position y z-index */
-
+    position: relative;
+    z-index: 1;
     background-color: var(--color-bg-projects);
     padding: 14rem 10rem;
 
@@ -591,10 +592,12 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .projects__categories{
     /* Flex */
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
     gap: 7rem;
     margin-bottom: 5.5rem;
 }
+
 .categories__item{
     /* position */
 
@@ -608,17 +611,27 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 
 .projects__all{
     /* flex */
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem 7rem;
 }
 .projects__project{
-    width: calc(50% - 3.5rem); /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
+    width: calc(100% - 3.5rem); /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
 }
 .project__container-img{
     width: 100%;
     border-radius: 3rem 3rem 0 0;
     overflow: hidden;
 }
+
+.project__link-img{
+    transition: all 2s ease-in-out;
+}
+
+.projects__project:hover .project__link-img{
+    transform: scale(1.2);
+}
+
 .project__img{
     width:100%;
     /* efecto */
@@ -642,26 +655,32 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .project__tags{
     font-size: 1.7rem;
 }
+
+
 .project-shapes__item{
     /* position y z-index */
-
+    position: absolute;
+    z-index: -1;
     pointer-events: none;
 }
 .project-shapes--shape1{
     /* position */
-    
+    top: 0%;
+    right: 10%;
     opacity: 0.5;
 }
 .project-shapes--shape2{
     /* position */
-
+    top: 4%;
+    right: 40%;
     opacity: 0.5;
     /* animación */
 
 }
 .project-shapes--shape3{
     /* position */
-
+    top: 1%;
+    right: 15%;
     opacity: 0.8;
     /* animación */
 }
