@@ -121,14 +121,34 @@ body{
     margin-left: 26px;
 
     /* A la hora de crear animación */
-
+    animation: giraRueda 4s infinite linear;
 }
 
 /* animación logo rueda */
-
+@keyframes giraRueda{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
 
 /* efecto de desaparece y vuelve keyframes */
-
+.header_logo:hover .logo__gear{
+    animation: desdeAbajo 1s linear;
+}
+@keyframes desdeAbajo{
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(200%) rotate(360deg);/*desaparece*/
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
 
 .header__menu{
     float: right;
@@ -147,8 +167,13 @@ body{
     color: var(--color-text-white);
     text-decoration: none;
     /* transición */
+    transition: all 500ms;
 }
 /* hover */
+.menu__list li a:hover{
+    color: var(--color-primary);
+    transform: scale(1.2);
+}
 
 /* Maquetando el Banner */
 .content__banner{
@@ -156,14 +181,23 @@ body{
     height: 100px;
     border: 10px solid var(--color-text-white);
     box-shadow: 0px 0px 2px var(--color-gray);
-    background: url("../img/bakbaner.png");
+    background: url("../img/backbaner.png");
     background-position: -200px -200px;
     margin: 20px auto;
     overflow: hidden;
     /* animación */
+    animation: backBanner 10s linear infinite;
 }
 
 /* keyframes */
+@keyframes backBanner{
+    from{
+        background-position: 0px 0px;
+    }
+    to{
+        background-position: -200px -200px;
+    }
+}
 
 .content__banner h1{
     display: block;
@@ -175,9 +209,26 @@ body{
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
     /* animación */
+    animation: mueveTexto 10s linear 1; /*el uno es que solo se repite una vez*/
 }
 
 /* keyframes */
+@keyframes mueveTexto{
+    0%{
+        transform: translateX(-200%) scale(2.3);
+    }
+    35%{
+        transform: translateX(200%) scale(2.3);
+    }
+    75%{
+        transform: translateX(-200%) scale(2.3);
+        opacity: 20%;
+    }
+    100%{
+        transform: translateX(0%) scale(1);
+        opacity: 100%;
+    }
+}
 
 /* Tarjetas */
 .cards__card{
@@ -191,10 +242,12 @@ body{
     margin-top: 40px;
     cursor: pointer;
     /* transicion */
-
+    transition: all 500ms;
 }
 /*efecto hover en las cartas */
-
+.cards__card:hover{
+    background-color: var(--color-bg);
+}
 
 .cards__card:last-child{
     margin-right: 0px;
@@ -210,8 +263,23 @@ body{
     margin: 0px auto;
 }
 /*efecto hover en la carta modificamos card__icon */
-
+.cards__card:hover .card__icon{
+    color: var(--color-primary);
+    font-size: 60px;
+    animation: mostrarIcono 1s linear;
+}
 /* keyframes */
+@keyframes mostrarIcono{
+    from{
+        transform: translateY(-200%);
+        width: 0%;
+        color: var(--color-bg);
+    }
+    to{
+        transform: translateY(0%);
+        width: 100%;
+    }
+}
 
 .card__category{
     width: 100%;
@@ -224,6 +292,18 @@ body{
     transition: all 500ms;
 }
 /*efecto hover en la carta - modificamos card_category */
+.cards__card:hover .card__category{
+    color: var(--color-secondary);
+    animation: mostrarCategoria 500ms linear;
+}
+@keyframes mostrarCategoria{
+    from{
+        transform: translateX(-200%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
 
 .card__description{
     font-family: "TrebuchetMS";
@@ -231,9 +311,21 @@ body{
     color: var(--color-text-title);
     font-size: 14px;
     /* transición */
+    transition: all 500ms;
 }
 /* efecto de hover en la carta. tocamos card__description */
-
+.cards__card:hover .card__description{
+    color: var(--color-primary);
+    animation: mostrarDescripcion 1s linear;
+}
+@keyframes mostrarDescripcion{
+    from{
+        transform: translateX(200%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
 
 .clearfix{
     float: none;
@@ -286,8 +378,12 @@ body{
     background-color: transparent;
     color: var(--color-backgroung);
     /* transición para el focus */
+    transition: all 500ms;
 }
 /* obtengo foco en input[type="text"] */
+.lateral_search input[type="text"]:focus{
+    color: var(--color-box-shadow2);
+}
 
 
 .lateral__search input[type="button"],
@@ -417,10 +513,13 @@ body{
     transform: translateX(-80%); /*lo desplazo para que cuando se lance el hover se vea el movimiento de la traslación*/
     opacity: 0; /*lo oculto*/
     /* transición el cambio */
-
+    transition: all 1s linear;
 }
 /* efecto hover sobre el div de lateral__social */
-
+.lateral__social div:hover .social__overlay{
+    opacity: 1;
+    transform: translateX(0%);
+}
 
 /* Artículos */
 .content__articles{
@@ -562,9 +661,14 @@ body{
     display: block;
     height: 40px;
     /* transición */
+    transition: all 500ms;
 }
 /* efecto de hover sobre cada li */
-
+.footer__list li a:hover{
+    padding-left: 40px;/*Lo mismo que el keyframe en este caso pero mas rapido*/
+    color: var(--color-text-white);
+    width: 100%;
+}
 
 .content__footer iframe{
     width: 100%;
