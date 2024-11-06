@@ -29,8 +29,8 @@
  definimos familia de fuente que voy a utilizar */
 :root{
     --mx-width: 1240px;
-    --color-primary: #37bcf9;
-    --color-secondary: #fff;
+    --color-primary: #6cc916;
+    --color-secondary: #a0ffa9;
     --color-backgroung: #ccc;
     --color-bg: black;
     --color-text-white: white;
@@ -50,7 +50,7 @@ html{
     overflow-x: hidden;
 }
 body{
-    background: url("../img/pattern.png");
+    /* background: url("../img/pattern.png"); */
 }
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
 .header__wrap, .content__wrap, .footer__wrap{
@@ -67,9 +67,15 @@ body{
 .header{
     width: 100%;
     height: 70px;
-    background-color: var(--color-bg);
+    /* background-color: var(--color-bg); */
+    border-bottom: 3px solid var(--color-bg);
     font-family: "BebasNeue";
     color: var(--color-text-white);
+}
+
+.header__wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .header__logo{
@@ -79,19 +85,24 @@ body{
     background-color: var(--color-primary);
     text-align: center;
     margin-top: 8px;
-    margin-left: 20px;
+    margin-left: 38px;
     letter-spacing: 1px;
     cursor: pointer;
     overflow: hidden;
+    border-radius: 10px;
     /* transición */
     transition: all 500ms ease-in-out;
+}
+
+.logo__gear{
+    width: 30px;
 }
 
 .header__logo h3{
     display: block;
     float: right;
     font-size: 40px;
-    margin-right: 65px;
+    margin-right: 30px;
     /* transición */
     /* transition: all 600ms ease-in-out; */
 }
@@ -117,8 +128,8 @@ body{
     display: block;
     float: left;
     font-size: 30px;
-    margin-top: 4px;
-    margin-left: 26px;
+    margin-top: 2px;
+    margin-left: 20px;
 
     /* A la hora de crear animación */
     animation: giraRueda 4s infinite linear;
@@ -151,10 +162,12 @@ body{
 }
 
 .header__menu{
-    float: right;
+    display: grid;
     height: 70px;
+    margin-left: 67px;
     background: transparent;
 }
+
 .menu__list li{
     font-size: 24px;
     display: inline-block; /* puedo flotar con el float o bien mediante inline-block. Funcionaría igual */
@@ -164,7 +177,8 @@ body{
 }
 .menu__list li a{
     display:block;
-    color: var(--color-text-white);
+    font-size: 35px;
+    color: var(--color-bg);
     text-decoration: none;
     /* transición */
     transition: all 500ms;
@@ -178,36 +192,30 @@ body{
 /* Maquetando el Banner */
 .content__banner{
     width: 95.5%;
-    height: 100px;
+    height: 200px;
     border: 10px solid var(--color-text-white);
     box-shadow: 0px 0px 2px var(--color-gray);
-    background: url("../img/backbaner.png");
-    background-position: -200px -200px;
+    background: url("../img/backbaner.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     margin: 20px auto;
     overflow: hidden;
     /* animación */
-    animation: backBanner 10s linear infinite;
 }
 
 /* keyframes */
-@keyframes backBanner{
-    from{
-        background-position: 0px 0px;
-    }
-    to{
-        background-position: -200px -200px;
-    }
-}
 
 .content__banner h1{
     display: block;
-    width: 850px;
-    font-family: "BebasNeue";
+    width: 1300px;
+    font-family: "Sans-Serif";
     color: var(--color-text-white);
-    font-size: 45px;
+    font-size: 100px;
     letter-spacing: 2px;
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
+    margin-left: 60px;
     /* animación */
     animation: mueveTexto 10s linear 1; /*el uno es que solo se repite una vez*/
 }
@@ -215,37 +223,52 @@ body{
 /* keyframes */
 @keyframes mueveTexto{
     0%{
-        transform: translateX(-200%) scale(2.3);
+        transform: translateX(-200%);
     }
     35%{
-        transform: translateX(200%) scale(2.3);
+        transform: translateX(200%);
     }
     75%{
-        transform: translateX(-200%) scale(2.3);
-        opacity: 20%;
+        transform: translateX(-200%);
     }
     100%{
-        transform: translateX(0%) scale(1);
-        opacity: 100%;
+        transform: translateX(0%);
     }
 }
 
+.content__info{
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
 /* Tarjetas */
+.content__cards{
+    display: grid;
+    width: 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 88px;
+    margin-left: 17px;
+}
+
 .cards__card{
-    float: left;
-    width: 200px;
-    height: 260px;
+    display: grid;
+    grid-template-rows: 3fr 1fr 1fr;
+    width: 300px;
+    height: 400px;
     border: 1px solid var(--color-backgroung);
-    box-shadow: 1px 1px 4px var(--color-box-shadow);
+    box-shadow: 15px 10px 4px var(--color-box-shadow);
     overflow: hidden;
     margin: 22px;
     margin-top: 40px;
     cursor: pointer;
+    border-radius: 10px;
     /* transicion */
     transition: all 500ms;
 }
 /*efecto hover en las cartas */
 .cards__card:hover{
+    transform: scale(1.1);
     background-color: var(--color-bg);
 }
 
@@ -264,6 +287,7 @@ body{
 }
 /*efecto hover en la carta modificamos card__icon */
 .cards__card:hover .card__icon{
+    opacity: 20%;
     color: var(--color-primary);
     font-size: 60px;
     animation: mostrarIcono 1s linear;
@@ -284,16 +308,17 @@ body{
 .card__category{
     width: 100%;
     height: 50px;
-    font-family: "TrebuchetMS";
-    font-size: 21px;
+    font-family: "Cambria";
+    font-size: 24px;
     font-weight: bold;
     text-align: center;
-    color: var(--color-text-title);
     transition: all 500ms;
+    z-index: -1;
 }
 /*efecto hover en la carta - modificamos card_category */
 .cards__card:hover .card__category{
-    color: var(--color-secondary);
+    color: var(--color-primary);
+    z-index: 1;
     animation: mostrarCategoria 500ms linear;
 }
 @keyframes mostrarCategoria{
@@ -306,17 +331,19 @@ body{
 }
 
 .card__description{
-    font-family: "TrebuchetMS";
+    font-family: "Consolas";
     text-align: center;
-    color: var(--color-text-title);
-    font-size: 14px;
+    font-size: 16px;
+    z-index: -1;
+    margin: 2px;
     /* transición */
     transition: all 500ms;
 }
 /* efecto de hover en la carta. tocamos card__description */
 .cards__card:hover .card__description{
-    color: var(--color-primary);
-    animation: mostrarDescripcion 1s linear;
+    color: var(--color-text-white);
+    animation: mostrarDescripcion 2s linear;
+    z-index: 1;
 }
 @keyframes mostrarDescripcion{
     from{
