@@ -52,7 +52,13 @@ html{
     overflow-x: hidden;
 }
 body{
-    /* background: url("../img/pattern.png"); */
+    position: relative;
+    z-index: 1;
+    /* background: url("../img/background.jpg"); */
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    height: 100vh;
 }
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
 .header__wrap, .content__wrap, .footer__wrap{
@@ -84,7 +90,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 200px;
-    height: 50px;
+    height: 52px;
     background-color: var(--color-primary);
     text-align: center;
     margin-top: 8px;
@@ -99,6 +105,7 @@ body{
 
 .logo__gear{
     width: 30px;
+    margin-bottom: 10px;
 }
 
 .header__logo h3{
@@ -345,6 +352,7 @@ body{
     letter-spacing: 0.3px;
     z-index: -1;
     margin: 2px;
+    margin-top: 80px;
     /* transición */
     transition: all 500ms;
 }
@@ -363,10 +371,10 @@ body{
     }
 }
 
-.clearfix{
+/* .clearfix{
     float: none;
     clear: both;
-}
+} */
 
 /* Barra lateral */
 .content__lateral{
@@ -728,3 +736,23 @@ body{
 - Transitions 
 
 Indico cada punto aplicado como efecto*/
+.bolitas{
+    position: absolute;
+}
+.bolitas__item{
+    position:absolute;
+    z-index: 5;
+}
+.maq--shape1{
+    top:0;
+    right:0;
+}
+
+.maq--shape2{
+    top:0;
+    right:0;
+}
+.maq--shape3{
+    top:0;
+    right:0;
+}

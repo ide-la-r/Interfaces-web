@@ -1,0 +1,39 @@
+//variables
+$b: 'body';
+$color-fondo: #ccc;
+$color-letra: black;
+$color-letra2: blue;
+$color-fondo2: blue;
+
+body{
+    background-color: $color-fondo;
+}
+
+h1{
+    color: $color-letra;
+    background-color: $color-fondo2;
+}
+
+.caja{
+    border: 1px solod black;
+    margin: 0px auto;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+
+    h2{
+        color: $color-letra2
+    }
+
+    .info{
+        border: 1px solid black;
+        h2{
+            color: $color-letra;
+            font-size: 18px;
+        }
+    }
+}
+
+.caja h2{
+    color: $color-letra;
+}
