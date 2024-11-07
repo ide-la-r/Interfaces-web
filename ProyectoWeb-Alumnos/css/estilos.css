@@ -31,6 +31,8 @@
     --mx-width: 1240px;
     --color-primary: #6cc916;
     --color-secondary: #a0ffa9;
+    --color-third: #0a6522;
+    --color-four: #89d631;
     --color-backgroung: #ccc;
     --color-bg: black;
     --color-text-white: white;
@@ -79,7 +81,8 @@ body{
 }
 
 .header__logo{
-    float: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 200px;
     height: 50px;
     background-color: var(--color-primary);
@@ -126,9 +129,9 @@ body{
 
 .header__logo .logo__gear{
     display: block;
-    float: left;
+    
     font-size: 30px;
-    margin-top: 2px;
+    /* margin-top: 2px; */
     margin-left: 20px;
 
     /* A la hora de crear animación */
@@ -252,8 +255,9 @@ body{
 }
 
 .cards__card{
+    position: relative;
     display: grid;
-    grid-template-rows: 3fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     width: 300px;
     height: 400px;
     border: 1px solid var(--color-backgroung);
@@ -264,12 +268,13 @@ body{
     cursor: pointer;
     border-radius: 10px;
     /* transicion */
-    transition: all 500ms;
+    transition: all 750ms;
 }
 /*efecto hover en las cartas */
 .cards__card:hover{
     transform: scale(1.1);
-    background-color: var(--color-bg);
+    grid-template-rows: 1fr 1fr 2fr;
+    /* background-color: var(--color-bg); */
 }
 
 .cards__card:last-child{
@@ -287,40 +292,41 @@ body{
 }
 /*efecto hover en la carta modificamos card__icon */
 .cards__card:hover .card__icon{
-    opacity: 20%;
+    opacity: 35%;
     color: var(--color-primary);
     font-size: 60px;
-    animation: mostrarIcono 1s linear;
+    animation: mostrarIcono 1s ease-in-out;
 }
 /* keyframes */
 @keyframes mostrarIcono{
     from{
-        transform: translateY(-200%);
-        width: 0%;
-        color: var(--color-bg);
+        opacity: 10%;
     }
     to{
-        transform: translateY(0%);
-        width: 100%;
+        opacity: 35%;
     }
 }
 
-.card__category{
+/* .card__category{
+    position: absolute;
+    justify-content:start;
+    margin-top: 20px;
     width: 100%;
     height: 50px;
-    font-family: "Cambria";
-    font-size: 24px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 35px;
     font-weight: bold;
     text-align: center;
     transition: all 500ms;
     z-index: -1;
-}
+} */
+
 /*efecto hover en la carta - modificamos card_category */
-.cards__card:hover .card__category{
-    color: var(--color-primary);
+/* .cards__card:hover .card__category{
+    color: var(--color-third);
     z-index: 1;
     animation: mostrarCategoria 500ms linear;
-}
+} */
 @keyframes mostrarCategoria{
     from{
         transform: translateX(-200%);
@@ -331,9 +337,12 @@ body{
 }
 
 .card__description{
-    font-family: "Consolas";
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
-    font-size: 16px;
+    justify-content: center;
+    font-size: 20px;
+    font-style: oblique;
+    letter-spacing: 0.3px;
     z-index: -1;
     margin: 2px;
     /* transición */
@@ -341,8 +350,8 @@ body{
 }
 /* efecto de hover en la carta. tocamos card__description */
 .cards__card:hover .card__description{
-    color: var(--color-text-white);
-    animation: mostrarDescripcion 2s linear;
+    color: var(--color-bg);
+    animation: mostrarDescripcion 1.5s linear;
     z-index: 1;
 }
 @keyframes mostrarDescripcion{
