@@ -212,6 +212,7 @@ body{
 
 .content__banner h1{
     display: block;
+    text-align: center;
     width: 1300px;
     box-shadow: 0px 0px 2px var(--color-gray);
     font-family: "Sans-Serif";
@@ -220,9 +221,8 @@ body{
     letter-spacing: 2px;
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
-    margin-left: 200px;
     /* animación */
-    animation: mueveTexto 10s linear 1; /*el uno es que solo se repite una vez*/
+    /*animation: mueveTexto 10s linear 1;*/ /*el uno es que solo se repite una vez*/
 }
 
 /* keyframes */
@@ -248,13 +248,12 @@ body{
 
 /* Tarjetas */
 .content__cards{
-    /* justify-content: center; */
     display: grid;
-    width: 60%;
+    width: 60% auto;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 80px;
-    margin-left: 360px;
+    margin: 10px auto;
 }
 
 .cards__card{
@@ -373,19 +372,18 @@ body{
 } */
 
 .segunda__parte{
+    width: 70% auto;
+    align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 70%;
-    margin-top: 20px;
-    margin-left: 300px;
 }
 
 /* Barra lateral */
 .content__lateral{
     width: 300px;
-    min-height: 1070px;
     font-family: "TrebuchetMS";
-    margin: 20px;
+    margin: 20px auto;
+    margin-right: 400px;
 }
 .lateral__title{
     display: block;
@@ -522,6 +520,16 @@ body{
 }
 
 /* Artículos */
+
+.articles__title{
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px var(--color-four), 1px 2px 0px var(--color-four), 2px 3px 0px var(--color-four), 3px 4px 0px var(--color-four);
+}
+
+.articles__title:first-child{
+    margin-top: 0px;
+}
+
 .content__articles{
     width: 860px;
 }
@@ -537,8 +545,7 @@ body{
     font-weight: normal;
     letter-spacing: 2px;
     background: url("../img/pxvar(--color-gray).png"), var(--color-text-white);
-    box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
-    margin: 0px auto;
+    margin: 20px auto;
     margin-top: 20px;
     margin-bottom: 15px;
 }
