@@ -27,4 +27,84 @@ h1 {
 
 .caja h2 {
   color: black;
+}
+
+.caja {
+  border: 5px solid grey;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.caja2 {
+  border: 5px solid black;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px grey;
+}
+.caja2 h2 {
+  color: blue;
+}
+
+.alerta {
+  border: 5px solid yellow;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px grey;
+  padding: 10px;
+  width: 75%;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 36px;
+}
+
+.cajas {
+  width: 900px;
+  border: 1px solid black;
+}
+
+.cajaOp {
+  float: left;
+  border: 5px solid grey;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+  margin: 10px;
+  width: 22.2222222222%;
+}
+
+.listadoMixin ul li:nth-child(1) {
+  font-size: 5px;
+}
+
+.listadoMixin ul li:nth-child(2) {
+  font-size: 10px;
+}
+
+.listadoMixin ul li:nth-child(3) {
+  font-size: 15px;
+}
+
+.listadoMixin ul li:nth-child(4) {
+  font-size: 20px;
+}
+
+.listadoMixin ul li:nth-child(5) {
+  font-size: 25px;
+}
+
+.listadoMixin ul li:nth-child(6) {
+  font-size: 30px;
+}
+
+.listadoMixin ul li:nth-child(7) {
+  font-size: 35px;
+}
+
+.listadoMixin ul li:nth-child(8) {
+  font-size: 40px;
+}
+
+.listadoMixin ul li:nth-child(9) {
+  font-size: 45px;
 }/*# sourceMappingURL=estilos.css.map */

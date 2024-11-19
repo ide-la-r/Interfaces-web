@@ -37,3 +37,83 @@ h1{
 .caja h2{
     color: $color-letra;
 }
+
+// Mixins - funciones
+
+@mixin crearborder5-sombra(){
+    border: 5px solid grey;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.caja{
+    @include crearborder5-sombra();
+}
+
+@mixin crearBorder5-sombraParam($color, $sizeB, $sizeS, $shadow, $sizeBR){
+    border: $sizeB solid $color;
+    border-radius: $sizeBR;
+    box-shadow: 0px 0px $sizeS $shadow;
+}
+
+.caja2{
+    @include crearBorder5-sombraParam(black, 5px, 10px, grey, 20px);
+    h2{
+        color: $color-letra2;
+    }
+}
+
+//Herencia Sass
+%alerta-normal{
+    @include crearBorder5-sombraParam(yellow, 5px, 10px, grey, 20px);
+    padding: 10px;
+    width: 75%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.alerta{
+    @extend %alerta-normal;
+}
+
+//Operadores
+h4{
+    font-size: 32px + 5px - 1px;
+}
+
+$caja: 200px;
+$wrap: 900px;
+
+.cajas{
+    width: $wrap;
+    border: 1px solid black;
+}
+
+.cajaOp{
+    float: left;
+    @include crearborder5-sombra();
+    margin:  10px;
+    width: ($caja / $wrap) * 100%;
+}
+
+//condicionales Sass - if
+$color-fondo: black;
+h1{
+    @if $color-fondo == #ccc{
+        $color-fondo: #ccc;
+    } @else if $color-fondo == black{
+        $color-fondo: black;
+    } @else{
+        $color-fondo: #ccc;
+    }
+}
+
+//Bucles for - each - while
+$contador: 1;
+
+@for $contador from 1 through 9{
+    .listadoMixin ul li:nth-child(#{$contador}){
+        font-size: $contador * 5px;
+    }
+}
