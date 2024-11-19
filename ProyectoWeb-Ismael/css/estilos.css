@@ -174,7 +174,7 @@ body{
 
 .menu__list li{
     font-size: 24px;
-    display: inline-block; /* puedo flotar con el float o bien mediante inline-block. Funcionaría igual */
+    display: inline-block; 
     margin: 0px 20px 0px 20px;
     letter-spacing: 1px;
     line-height: 70px;
@@ -199,7 +199,7 @@ body{
     height: 200px;
     border: 10px solid var(--color-four);
     box-shadow: 0px 0px 2px var(--color-gray);
-    background: url("../img/backbaner.gif");
+    background: url("../img/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -207,12 +207,13 @@ body{
     overflow: hidden;
     /* animación */
 }
-
 /* keyframes */
+
 
 .content__banner h1{
     display: block;
-    width: 1300px;
+    text-align: center;
+    width: 80%;
     box-shadow: 0px 0px 2px var(--color-gray);
     font-family: "Sans-Serif";
     color: var(--color-text-white);
@@ -220,7 +221,7 @@ body{
     letter-spacing: 2px;
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
-    margin-left: 200px;
+    margin-left: 10px auto;
     /* animación */
     animation: mueveTexto 10s linear 1; /*el uno es que solo se repite una vez*/
 }
@@ -248,13 +249,12 @@ body{
 
 /* Tarjetas */
 .content__cards{
-    /* justify-content: center; */
     display: grid;
-    width: 60%;
+    width: 60% auto;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 80px;
-    margin-left: 360px;
+    margin: 10px auto;
 }
 
 .cards__card{
@@ -310,35 +310,6 @@ body{
     }
 }
 
-/* .card__category{
-    position: absolute;
-    justify-content:start;
-    margin-top: 20px;
-    width: 100%;
-    height: 50px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 35px;
-    font-weight: bold;
-    text-align: center;
-    transition: all 500ms;
-    z-index: -1;
-} */
-
-/*efecto hover en la carta - modificamos card_category */
-/* .cards__card:hover .card__category{
-    color: var(--color-third);
-    z-index: 1;
-    animation: mostrarCategoria 500ms linear;
-} */
-@keyframes mostrarCategoria{
-    from{
-        transform: translateX(-200%);
-    }
-    to{
-        transform: translateX(0%);
-    }
-}
-
 .card__description{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
@@ -367,25 +338,22 @@ body{
     }
 }
 
-/* .clearfix{
-    float: none;
-    clear: both;
-} */
-
 .segunda__parte{
+    width: 60% auto;
     display: grid;
+    max-width: 1800px;
+    margin: 20px auto;
     grid-template-columns: 1fr 1fr;
-    width: 70%;
-    margin-top: 20px;
-    margin-left: 300px;
 }
 
 /* Barra lateral */
 .content__lateral{
     width: 300px;
-    min-height: 1070px;
     font-family: "TrebuchetMS";
-    margin: 20px;
+    margin: 20px auto;
+    margin-left: 30px;
+    margin-top: 100px;
+    margin-right: 100px;
 }
 .lateral__title{
     display: block;
@@ -522,8 +490,19 @@ body{
 }
 
 /* Artículos */
+
+.articles__title{
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px var(--color-four), 1px 2px 0px var(--color-four), 2px 3px 0px var(--color-four), 3px 4px 0px var(--color-four);
+}
+
+.articles__title:first-child{
+    margin-top: 0px;
+}
+
 .content__articles{
     width: 860px;
+    margin-right: 500px;
 }
 
 .content__articles h2{
@@ -537,8 +516,7 @@ body{
     font-weight: normal;
     letter-spacing: 2px;
     background: url("../img/pxvar(--color-gray).png"), var(--color-text-white);
-    box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
-    margin: 0px auto;
+    margin: 20px auto;
     margin-top: 20px;
     margin-bottom: 15px;
 }
@@ -547,12 +525,25 @@ body{
     width: 98%;
     height: auto;
     border: 1px solid var(--color-backgroung);
-    margin: 40px auto;
+    border-radius: 7px;
+    margin: 15px auto;
     padding: 10px;
-    font-family: "TrebuchetMS";
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background: var(--color-text-white);
     color: var(--color-bg);
-    box-shadow: 1px 1px 2px var(--color-box-shadow);
+    box-shadow: 3px 3px 2px var(--color-box-shadow);
+}
+
+.articles__article{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.articles__article img{
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 90%;
+    height: 90%;
 }
 
 .articles__article h4{
@@ -569,14 +560,13 @@ body{
 }
 
 .article__datos{
-    float: right;
     background-color: var(--color-box-shadow2);
     color: var(--color-text-white);
     height: 30px;
     line-height: 30px;
     margin: -10px;
     padding: 4px;
-    font-size: 13px;
+    font-size: 16px;
     border-radius: 0px 0px 0px 5px; /* esquina inferior izq 5px */
 }
 .article__datos span{
@@ -590,37 +580,49 @@ body{
 }
 
 .articles__blog{
+    margin: 40px auto;
     height: 100px;
     margin-top: 60px;
     line-height: 100px;
     text-align: center;
     font-family: "BebasNeue";
     /* transición */
-
 }
-.articles__blog a{
-    font-family: "BebasNeue";
-    font-size: 40px;
+
+.boton{
+    border-radius: 5px;
+    color: var(--color-bg);
+    display: inline-block;
+    padding: 5px;
+    background-color: var(--color-four);
     letter-spacing: 3px;
-    color: var(--color-text-title);
+    font-size: 40px;
     text-decoration: none;
-    /* transición */
+    overflow: hidden;
+    transition: 0.2s;
 }
-/* efecto de hover sobre articles__blog */
 
+.boton:hover{
+    background-color: var(--color-four);
+    box-shadow: 0 0 10px var(--color-four), 0 0 40px var(--color-four), 0 0 80px var(--color-four);
+}
 
 /* FOOTER */
 .content__footer{
     width: 100%;
     height: 470px;
-    background-color: black;
-    color: var(--color-text-white);
+    background: linear-gradient(to bottom, var(--color-primary) 0%, var(--color-four) 100%);    color: var(--color-text-white);
     overflow: hidden;
 }
+
+.footer__wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .footer__wrap > div{
-    float: left;
-    width: 25%;
-    height: 370px;
+    width: 80%;
+    height: 400px;
     margin: 40px;
     text-align: center;
     color: var(--color-text-white);
@@ -645,11 +647,12 @@ body{
     color: black;
     border-radius: 5px;
     margin-bottom: 15px;
+    box-shadow: 5px 5px 0px var(--color-third);
 }
 .footer__list{
     text-align: left;
     margin: 20px;
-    font-size: 25px;
+    font-size: 30px;
 }
 .footer__list li{
     margin-top: 10px;
@@ -659,6 +662,7 @@ body{
 .footer__list li a{
     display: block;
     height: 40px;
+    color: var(--color-bg);
     /* transición */
     transition: all 500ms;
 }
@@ -680,34 +684,4 @@ body{
 
 .content__footer img{
     margin-bottom: 15px;
-}
-.footer__browsers img{
-    width: 45px;
-}
-
-/* Animaciones y Transiciones
-- Propiedad Animation
-- Keyframes
-- Transitions 
-
-Indico cada punto aplicado como efecto*/
-.bolitas{
-    position: absolute;
-}
-.bolitas__item{
-    position:absolute;
-    z-index: 5;
-}
-.maq--shape1{
-    top:0;
-    right:0;
-}
-
-.maq--shape2{
-    top:0;
-    right:0;
-}
-.maq--shape3{
-    top:0;
-    right:0;
 }
