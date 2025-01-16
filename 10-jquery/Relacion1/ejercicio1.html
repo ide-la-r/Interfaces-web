@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <!-- 1-Selecciona el elemento con la clase .item y cámbiale el texto. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+<body>
+    
+    <label for="">Nombre:</label>
+    <input type="text" class="texto">
+    <input type="button" id="boton" value="Cambiar texto">
+    <script>
+        $(document).ready(function(){
+            $("#boton").click(function(evento){
+                $(".texto").val("el texto ha cambiado");
+            });
+        });
+    </script>
+</body>
+</html>

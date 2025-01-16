@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <!-- 3-Accede al primer <div> de la página y agrega el texto "Hola Mundo". -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+<body>
+    
+    <label for="">Productos:</label>
+    <div>Hola me llamo ismael</div>
+    <div>Hola me llamo carlos</div>
+    <div>Hola me llamo manuva</div>
+    <input type="button" id="boton" value="Agregar texto">
+    <script>
+        $(document).ready(function(){
+            $("#boton").click(function(evento){
+                $("div:eq(0)").text("Hola Mundo")
+            });
+        });
+    </script>
+</body>
+</html>

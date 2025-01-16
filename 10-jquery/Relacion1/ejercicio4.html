@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <!-- 4-Selecciona el elemento con id #titulo y cambia su color a rojo. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+<body>
+    
+    <label for="">Productos:</label>
+    <div id="titulo">Hola me llamo ismael</div>
+    <div id="subtitulo">Hola me llamo carlos</div>
+    <input type="button" id="boton" value="Cambiar color">
+    <script>
+        $(document).ready(function(){
+            $("#boton").click(function(evento){
+                $("#titulo").css("color", "red")
+            });
+        });
+    </script>
+</body>
+</html>
