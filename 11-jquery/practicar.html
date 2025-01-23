@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<body>
+    <script>
+        //EVENTOS DE TECLADO
+
+        //cuando pulso la tecla 13 sale por pantalla que pulse el enter
+        $('inputTexto').on('keypress', function(e){
+            if (e.which === 13) { // 13 es el enter en ascii
+                console.log('Se presiono la tecla Enter');
+            }
+        });
+
+        //Cuando escribo, sale en la pantalla lo que escribo
+        $('#inputTexto').on('input', function(){
+            console.log('El usuario escribio: ' + $(this).val());
+        });
+
+        //Muestra por consola el codigo de la tecla presionada (lo dudo)
+        $('inputTexto').on('keydown', function(e){
+            console.log("La tecla presionada es: " + e.witch);
+        });
+
+        //Al pulsar ESC dentro de #campo se limpia el valor que contenga ''
+        $('#campo').on('keydown', function(){
+            if (e.which === 27) { //27 es la tecla escape
+                $(this).val('');
+            }
+        });
+
+        //Cuando pulso tab dentrop de #campo se cambia el bg-color a amarillo
+        $('#campo').on('keydown', function(e){
+            if (e.which === 9) {
+                $(this).css('background-color', 'yellow');
+            }
+        });
+
+        //Muestra el caracter que se ha escrito dentro de #inputTexto
+        $('#inputTexto').on('keydown', function(e){
+            console.log('El caracter escrito es: ' + String.fromCharCode(e.which)); //El e.which devuelve el numero ascii, y el String.fromCharCode, lo que devuelve es el valor de la letra
+        });//el e.key en vez de e.witch ter hace esto automaticamente no hace falta lo del string
+
+        //Verifica que haya un @ en el email, si lo hay "correo valido", si no lo contrario
+        $('#email').on('input', function(){
+            var email = $(this).val();
+            if (email.indexOf('@' !== -1)) {
+                console.log("correo valido");
+            } else{
+                console.log("correo invalido");
+            }
+        });
+
+        //Muestra por consola cuando se pulsa una tecla en #busqueda
+        $('#busqueda').on('keypress', function(){
+            console.log("Tecla presionada en la busqueda");
+        });
+
+        //cada vez que se escribe un caracter muestra los que te quedan pormpulsar hasta llegar al 10
+        $('#campo').on('input', function() {
+            var maxLength = 10;
+            var remaining = maxLength - $(this).val().length;
+            console.log('Caracteres restantes: ' + remaining);
+        });
+
+        //Si se pulsa Shift dentro del documento, se cambia el color del fondo de los p a lightblue
+        $(document).on('keydown', function(e){
+            if (e.shiftKey) {
+                $('p').css('background-color', 'lightblue');
+            }
+        });
+
+        //EVENTOS DE RATON
+        //Cuando se pasa el raton por #area, cambia el bg-color a verde
+        $('#area').on('mouseenter', function(){
+            $(this).css('background-color', 'green')
+        });
+
+        //Cuando se pulsa cualquier boton, cambia su texto a "Clicado"
+        $('button').on('click', function() {
+            $(this).text('Clicado');
+        });
+
+        
+
+    </script>
+</body>
+</html>

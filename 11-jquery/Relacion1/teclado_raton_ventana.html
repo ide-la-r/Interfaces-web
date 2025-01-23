@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de teclado - JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    
+    <script>
+        
+        //EVENTOS DE TECLADO
+
+        // Cuando se toque la tecla "13 de ASCII = Enter" en #inputTexto, muestra el mensaje por consola
+        $('#inputTexto').on('keypress', function(e) {
+            if (e.which === 13) { // Enter
+                console.log('Se presionó Enter');
+            }
+        });
+
+        // Cuando escribo, sale por pantalla lo que escribo
+        $('#inputTexto').on('input', function() {
+            console.log('El usuario escribió: ' + $(this).val());
+        });
+
+        // Muestra por consola el código de la tecla presionada (Lo dudo)
+        $('#inputTexto').on('keydown', function(e) {
+            console.log('Código de tecla presionada: ' + e.which);
+        });
+
+        // Al pulsar Esc dentro de #campo se limpia el valor que contenga ''
+        $('#campo').on('keydown', function(e) {
+            if (e.which === 27) { // Esc
+                $(this).val('');
+            }
+        });
+
+        // Cuando pulso Tab dentro de #campo se cambia el bg-color a amarillo
+        $('#campo').on('keydown', function(e) {
+            if (e.which === 9) { // Tab
+                $(this).css('background-color', 'yellow');
+            }
+        });
+
+        // Muestra el caracter que se ha escrito dentro de #inputTexto
+        $('#inputTexto').on('keydown', function(e) {
+            console.log('Carácter escrito: ' + String.fromCharCode(e.which));
+        });
+
+        // Verifica que haya un @ en el email, si lo hay "Correo válido", si no, "Correo inválido"
+        $('#email').on('input', function() {
+            var email = $(this).val();
+            if (email.indexOf('@') !== -1) {
+                console.log('Correo válido');
+            } else {
+                console.log('Correo inválido');
+            }
+        });
+
+        // Muestra por consola cuando se pulsa una tecla en #busqueda
+        $('#busqueda').on('keypress', function() {
+            console.log('Tecla presionada en la búsqueda');
+        });
+
+        // Cada vez que se escribe un caracter te muestra los que te quedan por pulsar al llegar hasta 10, en #campo
+        $('#campo').on('input', function() {
+            var maxLength = 10;
+            var remaining = maxLength - $(this).val().length;
+            console.log('Caracteres restantes: ' + remaining);
+        });
+
+        // Si se pulsa Shift dentro del documento, se cambia el color de fondo de los p a lightblue
+        $(document).on('keydown', function(e) {
+            if (e.shiftKey) {
+                $('p').css('background-color', 'lightblue');
+            }
+        });
+
+
+        // EVENTOS DE RATÓN
+
+        // Cuando se pasa el ratón por #area, cambia el bg-color a verde
+        $('#area').on('mouseenter', function() {
+            $(this).css('background-color', 'green');
+        });
+
+        // Cuando se pulsa cualquier botón, cambia su texto a "Clicado"
+        $('button').on('click', function() {
+            $(this).text('Clicado');
+        });
+
+        // Cuando se mueve el ratón por #contenedor, detecta la posiciónX e Y de la página en dónde se encuentra el ratón (coordenadas)
+        $('#contenedor').on('mousemove', function(e) {
+            console.log('Coordenadas: X=' + e.pageX + ', Y=' + e.pageY);
+        });
+
+        // Cuando entra el ratón en .item, cambia la fuente a 20px, y al salir 16px
+        $('.item').on('mouseenter', function() {
+            $(this).css('font-size', '20px');
+        }).on('mouseleave', function() {
+            $(this).css('font-size', '16px');
+        });
+
+        // Cuando entra el ratón en cualquier div, se pone el bg-color amarillo, y al salir se le quita el amarillo
+        $('div').on('mouseenter', function() {
+            $(this).css('background-color', 'yellow');
+        }).on('mouseleave', function() {
+            $(this).css('background-color', '');
+        });
+
+        // Cuando se hace CLICK DERECHO en un span, sale un alert con el mensaje
+        $('span').on('contextmenu', function(e) {
+            e.preventDefault(); //Impide el evento que ocurre por defecto, es decir, el menu de opciones del click derecho
+            alert('Clic derecho detectado');
+        });
+
+        // Cuando se mueve el ratón en #foto se mueve por #area
+        $('#foto').on('mousemove', function(e) {
+            var offset = $('#area').offset();
+            $(this).css({
+                position: 'absolute',
+                top: e.pageY - offset.top - $(this).height() / 2,
+                left: e.pageX - offset.left - $(this).width() / 2
+            });
+        });
+
+        // Cuando se hace doble click en una p, cambia el texto al ejemplo
+        $('p').on('dblclick', function() {
+            $(this).text('Texto cambiado por doble clic');
+        });
+
+        // Cuando el ratón entra a un div, se desplaza hacia arriba
+        $('div').on('mouseenter', function() {
+            $(this).animate({ top: '-10px' }, 500);
+        });
+
+        // Cuando el ratón sale de #zona sale un alert
+        $('#zona').on('mouseleave', function() {
+            alert('¡Has salido del área!');
+        });
+
+
+       //EVENTOS DE VENTANA
+
+        // Cuando la ventana se redimensiona, sale mensaje por consola
+        $(window).on('resize', function() {
+            console.log('La ventana se ha redimensionado');
+        });
+
+        // Cuando la ventana se carga, cambia el bg-color del body a azul
+        $(window).on('load', function() {
+            $('body').css('background-color', 'blue');
+        });
+
+        // Cuando la ventana se minimiza, sale mensaje por consola
+        $(window).on('minimize', function() {
+            console.log('Ventana minimizada');
+        });
+
+        // Cuando la ventana se redimensiona, cambia el tamaño de #contenedor al de la ventana / 2
+        $(window).on('resize', function() {
+            $('#contenedor').width($(window).width() / 2);
+        });
+
+        // Cuando la ventana se redimensiona muestra el ancho y alto de la misma
+        $(window).on('resize', function() {
+            console.log('Ancho: ' + $(window).width() + ', Alto: ' + $(window).height());
+        });
+
+        // Antes de que la ventana se cierre devuelve el mensaje de ejemplo
+        $(window).on('beforeunload', function() {
+            return '¿Estás seguro que quieres salir de la página?';
+        });
+
+        // Cuando se scrollea la página a más de 100 (posición(?)) se muestra #contenedor, si no, se oculta
+        $(window).on('scroll', function() {
+            if ($(window).scrollTop() > 100) {
+                $('#contenedor').show();
+            } else {
+                $('#contenedor').hide();
+            }
+        });
+
+        // Cuando se scrollea la página, muestra la posición en la consola
+        $(window).on('scroll', function() {
+            console.log('Posición de scroll: ' + $(window).scrollTop());
+        });
+
+        // Cuando se redimensiona la ventana, cambia el ancho de los div a la mitad de la ventana
+        $(window).on('resize', function() {
+            $('div').css('width', $(window).width() / 2);
+        });
+
+        // Si se redimensiona la ventana a menos de 500, sale el siguiente alert
+        $(window).on('resize', function() {
+            if ($(window).width() < 500) {
+                alert('La ventana es demasiado pequeña');
+            }
+        });
+
+    </script>
+</body>
+</html>

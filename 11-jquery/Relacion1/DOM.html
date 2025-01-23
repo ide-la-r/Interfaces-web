@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Apuntes</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  
+  <script>
+
+    // Seleccion clase item y cambia el texto por "Nuevo texto"
+    $('.item').text('Nuevo texto');
+
+    // Selecciona el primer elemento con la clase .producto y cambia el bg-color
+    $('.producto:first').css('background-color', 'blue');
+
+    // Cambia el texto del primer div de la página
+    $('div:first').text('Hola Mundo');
+
+    // Cambia el color de #titulo a rojo
+    $('#titulo').css('color', 'red');
+
+    // Cambia el tamaño a todos los p
+    $('p').css('font-size', '18px');
+
+    // Añade un li al final de la lista
+    $('#lista').append('<li>Nuevo ítem</li>');
+
+    // Muestra el texto de #descripcion
+    console.log($('#descripcion').text());
+
+    // La de un border de 2px solid green a la clase carta
+    $('.carta').css('border', '2px solid green');
+
+    // Elimina todos los elementos con la clase .eliminar (se supone)
+    $('.eliminar').remove();
+
+    // Cambia el bg-color a gris a TODOS los span que esten dentro de #contenedor
+    $('#contenedor span').css('background-color', 'gray');
+
+    
+
+    // Oculta todos los elementos de la clase .foto
+    $('.foto').hide();
+
+    // Añade un borde rojo a todos los h1 dentro de un div
+    $('div h1').css('border', '2px solid red');
+
+    // Cambia el valor de los input por "Texto predeterminado"
+    $('input').val('Texto predeterminado');
+
+    // Cambia a amarillo el fondo del SEGUNDO div del documento
+    $('div:eq(1)').css('background-color', 'yellow');
+
+    // A todos los a que estén dentro de un nav se les añade la clase .activo
+    $('nav a').addClass('activo');
+
+    // Inserta un párrafo al principo del body con Bienvenido
+    $('body').prepend('<p>Bienvenido</p>');
+
+    // Cambia el atributo src por "nueva-imagen.jpg"
+    $('#imagen').attr('src', 'nueva-imagen.jpg');
+
+    // Establece un atributo data-id con 123 a toda la clase .producto
+    $('.producto').attr('data-id', '123');
+
+    // Cambia el valor de #nombre por "Juan Pérez"
+    $('#nombre').val('Juan Pérez');
+
+    // Añade un título a la página "Página Web Interactiva"
+    $('head').append('<title>Página Web Interactiva</title>');
+
+  </script>
+</body>
+</html>

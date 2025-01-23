@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distintos parámetros - JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    
+    <script>
+        // Devuelve el tipo de evento (click, keydown...)
+        event.type
+        $(document).on('click', function(event) {
+            console.log(event.type); // Imprime 'click'
+        });
+
+        // Devuelve el objeto sobre el que se ha disparado el evento
+        event.target
+        $(document).on('click', function(event) {
+            console.log(event.target); // Imprime el elemento sobre el que se hizo click
+        });
+
+        // Parecido a event.target, pero representa al que se le ha ASIGNADO el manejador de eventos
+        event.currentTarget
+        $('#miBoton').on('click', function(event) {
+            console.log(event.currentTarget); // Imprime el elemento con el evento asociado
+        });
+
+        // Coordenadas X e Y del mouse en relación a la página
+        event.pageX; event.pageY;
+        $(document).on('click', function(event) {
+            console.log('X: ' + event.pageX + ', Y: ' + event.pageY);
+        });
+
+        // Coordenadas X e Y del mouse en relación a la ventana del navegador
+        event.clientX; event.clientY;
+        $(document).on('click', function(event) {
+            console.log('X: ' + event.clientX + ', Y: ' + event.clientY);
+        });
+
+        // Devuelve el número de la tecla o botón de mouse pulsado
+        event.which
+        $(document).on('keydown', function(event) {
+            console.log(event.which); // Imprime el código de la tecla presionada
+        });
+
+        // Boolean si Shift está pulsada o No
+        event.shiftKey
+        $(document).on('keydown', function(event) {
+            console.log(event.shiftKey); // true si Shift estaba presionado
+        });
+
+        // Boolean si Ctrl está pulsada o No
+        event.ctrlKey
+        $(document).on('keydown', function(event) {
+            console.log(event.ctrlKey); // true si Ctrl estaba presionado
+        });
+
+        // Boolean si Alt está pulsada o No
+        event.altKey
+        $(document).on('keydown', function(event) {
+            console.log(event.altKey); // true si Alt estaba presionado
+        });
+
+        // Boolean si Meta (Creo que es la de Windows, en Mac: Command) está pulsada o No
+        event.metaKey
+        $(document).on('keydown', function(event) {
+            console.log(event.metaKey); // true si Meta (Command) estaba presionado
+        });
+
+        // Tiempo desde que el navegador cargó la página en ms
+        event.timeStamp
+        $(document).on('click', function(event) {
+            console.log(event.timeStamp); // Tiempo en milisegundos desde la carga
+        });
+
+        // Pasa datos a un manejador de eventos
+        event.data
+        $('#miBoton').on('click', { mensaje: 'Hola Mundo' }, function(event) {
+            console.log(event.data.mensaje); // "Hola Mundo"
+        });
+
+        // Impide que se ejecute la acción predeterminada del evento Ej: Si haces clickderecho no sale el menú de siempre
+        event.preventDefault()   
+        $(document).on('click', function(event) {
+            event.preventDefault(); // Impide la acción predeterminada
+        });
+
+        // Impide que se propague el evento hacia otros elementos
+        event.stopPropagation()
+        $('#miElemento').on('click', function(event) {
+            event.stopPropagation(); // Detiene la propagación del evento
+        });
+
+        // Igual que stopPropagation(), pero impide que se ejecuten otros manejadores en el mismo elemento
+        event.stopImmediatePropagation()
+        $('#miElemento').on('click', function(event) {
+            event.stopImmediatePropagation(); // Detiene todos los eventos
+        });
+
+        // Contiene el evento nativo del navegador (original)
+        event.originalEvent
+        $(document).on('click', function(event) {
+            console.log(event.originalEvent); // Muestra el evento original nativo
+        });
+
+    </script>
+
+</body>
+</html>
