@@ -1,0 +1,21 @@
+.formulario{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: .8rem;
+  justify-content: space-between;
+}
+
+.botonForm{
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.botonForm:hover{
+  background: rgb(124, 164, 255);
+}
+
+.mostrarFormulario{
+  color: #fff;
+}
