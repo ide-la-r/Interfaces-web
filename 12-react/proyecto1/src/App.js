@@ -23,8 +23,8 @@ function App() {
   return (
     <>
     {/* Cada vez que ponemos Iterador, utilizamos lo que hay la clase Iterador */}
-    {/* <Iterador/>*/}
-
+    <Iterador/>
+    <br/><br/>
     <div></div>
     <input ref={sumando1} type="number"/> +
     <input ref={sumando2} type="number"/> = 
