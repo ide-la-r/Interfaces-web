@@ -15,20 +15,24 @@ function App() {
     setNumSecreto(generarNumSecreto);
     setMensaje("Empiece a adivinar");
     setPuntuacion(20);
+    document.body.style.backgroundColor="";
   }
 
   const comparar = (numero)=>{
     if(!numero){
       setMensaje("Porfavor pon un numero")
     } else if (Number(numero) == numSecreto){
-      setMensaje("Ganaste!");
-      document.body.style.backgroundColor="green";
+        setMensaje("Ganaste!");
+        document.body.style.backgroundColor="green";
+        if (puntuacionMasAlta < puntuacion) {
+          setPuntuacionMasAlta(puntuacion);
+        }
       if(score > puntuacion){
         setScore(puntuacion);
       }
     } else if(puntuacion == 0){
-      setMensaje("Perdiste!")
-      document.body.style.backgroundColor = "red";
+        setMensaje("Perdiste!")
+        document.body.style.backgroundColor = "red";
     } else{
       if (Number(numero) < numSecreto) {
         setMensaje("El numero es menor que el numero secreto");
@@ -43,6 +47,7 @@ function App() {
   const [mensaje, setMensaje] = useState("Empiece a adivinar...");
   const [puntuacion, setPuntuacion] = useState(20);
   const [score, setScore] = useState(0);
+  const [puntuacionMasAlta, setPuntuacionMasAlta] = useState(0);
 
   return (
     <div className="container">
@@ -53,7 +58,7 @@ function App() {
     
     <Formulario comparar={comparar}/>
     
-    <Puntuacion/>
+    <Puntuacion puntMas={puntuacionMasAlta} punt={puntuacion} msj={mensaje}/>
   </div>
   );
 }

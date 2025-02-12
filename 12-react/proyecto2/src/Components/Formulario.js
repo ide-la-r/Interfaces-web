@@ -3,15 +3,13 @@ import React, { useState } from 'react'
 export default function Formulario({comparar}) {
   
   const comprobar = () => {
-      //comparar(num);
-      console.log(3)
+      comparar(num);
   }
   
   const [num, setNum] = useState();
 
   const modificar = (e) => {
-    console.log(e);
-    // setNum(e.target.value);
+    setNum(e.target.value);
   }
 
   return (

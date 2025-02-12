@@ -3,15 +3,15 @@ import Mensaje from './Mensaje'
 import LineaPuntuacion from './LineaPuntuacion'
 
 
-export default function Puntuacion() {
+export default function Puntuacion({msj, punt, puntMas}) {
   return (
     <div>
         <div className="score-section">
             <br/>
-            <Mensaje/>  
+            <Mensaje msj = {msj}/>  
             <br/>
-            <LineaPuntuacion etiqueta="Puntuacion:" id="score" numero="20"/>
-            <LineaPuntuacion etiqueta="Puntuaje Alto:" id="highscore" numero="0"/>
+            <LineaPuntuacion etiqueta="Puntuacion:" id="score" numero={punt}/>
+            <LineaPuntuacion etiqueta="Puntuaje Alto:" id="highscore" numero={puntMas}/>
         </div>
     </div>
   )
