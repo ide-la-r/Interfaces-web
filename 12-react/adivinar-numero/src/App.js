@@ -52,7 +52,7 @@ function App() {
   return (
     <div className="container">
     <Reiniciar reiniciar={reiniciar}/>
-    <h1>¡Adivina mi número!{numSecreto}</h1>
+    <h1>¡Adivina mi número!</h1>
     <NumeroSecreto/>
     <br/>
     
