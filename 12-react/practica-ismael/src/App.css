@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.contenedores{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0px; 
+  margin-left:  80px;
+}
+
+.contenedor{
+  color: white;
+  padding: 20px;
+  text-align: left;
+  width: 200px;
+  margin-top: 15px;
+  border: solid 1px black ;
+}

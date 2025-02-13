@@ -36,7 +36,7 @@ export default function App() {
       <br/>
       <Mensaje msj={mensaje}/>
       <br/>
-      <Imagen src={srcImagen} width="300px" method={cambiarImagen}/>
+      <Imagen src={imagen1} width="300px" method={cambiarImagen}/>
     </div>
   );
 }
